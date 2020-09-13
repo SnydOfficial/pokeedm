@@ -1,0 +1,229 @@
+; Format: (size 2 bytes)
+; 00: target map ID
+; 01: which dungeon warp in the source map was used
+DungeonWarpList: ; 63bf (1:63bf)
+	db SEAFOAM_ISLANDS_2,$01
+	db SEAFOAM_ISLANDS_2,$02
+	db SEAFOAM_ISLANDS_3,$01
+	db SEAFOAM_ISLANDS_3,$02
+	db SEAFOAM_ISLANDS_4,$01
+	db SEAFOAM_ISLANDS_4,$02
+	db SEAFOAM_ISLANDS_5,$01
+	db SEAFOAM_ISLANDS_5,$02
+	db VICTORY_ROAD_2,$02
+	db MANSION_1,$01
+	db MANSION_1,$02
+	db MANSION_2,$03
+	db $FF
+
+DungeonWarpData: ; 63d8 (1:63d8)
+	FLYWARP_DATA SEAFOAM_ISLANDS_2_WIDTH,7,18
+	FLYWARP_DATA SEAFOAM_ISLANDS_2_WIDTH,7,23
+	FLYWARP_DATA SEAFOAM_ISLANDS_3_WIDTH,7,19
+	FLYWARP_DATA SEAFOAM_ISLANDS_3_WIDTH,7,22
+	FLYWARP_DATA SEAFOAM_ISLANDS_4_WIDTH,7,18
+	FLYWARP_DATA SEAFOAM_ISLANDS_4_WIDTH,7,19
+	FLYWARP_DATA SEAFOAM_ISLANDS_5_WIDTH,14,4
+	FLYWARP_DATA SEAFOAM_ISLANDS_5_WIDTH,14,5
+	FLYWARP_DATA VICTORY_ROAD_2_WIDTH,16,22
+	FLYWARP_DATA MANSION_1_WIDTH,14,16
+	FLYWARP_DATA MANSION_1_WIDTH,14,16
+	FLYWARP_DATA MANSION_2_WIDTH,14,18
+
+;Format:
+;	db Map_id
+;	FLYWARP_DATA [Map Width][Y-pos][X-pos]
+;	db Tileset_id
+FirstMapSpec: ; 6420 (1:6420)
+	db REDS_HOUSE_2F
+	FLYWARP_DATA REDS_HOUSE_2F_WIDTH,6,3
+	db REDS_HOUSE_2
+
+BattleCenterSpec1: ; 6428 (1:6428)
+	db BATTLE_CENTER
+	FLYWARP_DATA BATTLE_CENTER_WIDTH,4,3
+	db CLUB
+
+BattleCenterSpec2: ; 6430 (1:6430)
+	db BATTLE_CENTER
+	FLYWARP_DATA BATTLE_CENTER_WIDTH,4,6
+	db CLUB
+
+TradeCenterSpec1: ; 6438 (1:6438)
+	db TRADE_CENTER
+	FLYWARP_DATA TRADE_CENTER_WIDTH,4,3
+	db CLUB
+
+TradeCenterSpec2: ; 6440 (1:6440)
+	db TRADE_CENTER
+	FLYWARP_DATA TRADE_CENTER_WIDTH,4,6
+	db CLUB
+
+FlyWarpDataPtr: ; 6448 (1:6448)
+	db PALLET_TOWN, 0
+	dw PalletTownFlyWarp
+	db VIRIDIAN_CITY, 0
+	dw ViridianCityFlyWarp
+	db PEWTER_CITY, 0
+	dw PewterCityFlyWarp
+	db CERULEAN_CITY, 0
+	dw CeruleanCityFlyWarp
+	db LAVENDER_TOWN, 0
+	dw LavenderTownFlyWarp
+	db VERMILION_CITY, 0
+	dw VermilionCityFlyWarp
+	db CELADON_CITY, 0
+	dw CeladonCityFlyWarp
+	db FUCHSIA_CITY, 0
+	dw FuchsiaCityFlyWarp
+	db CINNABAR_ISLAND, 0
+	dw CinnabarIslandFlyWarp
+	db INDIGO_PLATEAU, 0
+	dw IndigoPlateauFlyWarp
+	db SAFFRON_CITY, 0
+	dw SaffronCityFlyWarp
+	db VIRIDIAN_FOREST, 0
+	dw Route4FlyWarp
+	db NEW_CITY, 0
+	dw NewCityFlyWarp
+	db FLYMAP, 0
+	dw FlyMapFlyWarp
+	db ROUTE_1, 0
+	dw RT1FlyWarp
+	db ROUTE_2, 0
+	dw RT2FlyWarp
+	db ROUTE_3, 0
+	dw RT3FlyWarp
+	db ROUTE_4, 0
+	dw RT4FlyWarp
+	db ROUTE_5, 0
+	dw RT5FlyWarp
+	db ROUTE_6, 0
+	dw RT6FlyWarp
+	db ROUTE_7, 0
+	dw RT7FlyWarp
+	db ROUTE_8, 0
+	dw RT8FlyWarp
+	db ROUTE_9, 0
+	dw RT9FlyWarp
+	db ROUTE_10, 0
+	dw RT10FlyWarp
+	db ROUTE_11, 0
+	dw RT11FlyWarp
+	db ROUTE_12, 0
+	dw RT12FlyWarp
+	db ROUTE_13, 0
+	dw RT13FlyWarp
+	db ROUTE_14, 0
+	dw RT14FlyWarp
+	db ROUTE_15, 0
+	dw RT15FlyWarp
+	db ROUTE_16, 0
+	dw RT16FlyWarp
+	db ROUTE_17, 0
+	dw RT17FlyWarp
+	db ROUTE_18, 0
+	dw RT18FlyWarp
+	db ROUTE_19, 0
+	dw RT19FlyWarp
+	db ROUTE_20, 0
+	dw RT20FlyWarp
+	db ROUTE_21, 0
+	dw RT21FlyWarp
+	db ROUTE_22, 0
+	dw RT22FlyWarp
+	db ROUTE_23, 0
+	dw RT23FlyWarp
+	db ROUTE_24, 0
+	dw RT24FlyWarp
+	db ROUTE_25, 0
+	dw RT25FlyWarp
+	db SS_ANNE_1, 0
+	dw SSANNE1FlyWarp
+	
+
+; Original Format:
+;   [Event Displacement][Y-block][X-block][Y-sub_block][X-sub_block]
+; Macro Format:
+;   FLYWARP_DATA [Map Width][Y-pos][X-pos]
+PalletTownFlyWarp: ; 647c (1:647c)
+	FLYWARP_DATA PALLET_TOWN_WIDTH,      6,  5
+ViridianCityFlyWarp: ; 6482 (1:6482)
+	FLYWARP_DATA VIRIDIAN_CITY_WIDTH,   30, 5
+PewterCityFlyWarp: ; 6488 (1:6488)
+	FLYWARP_DATA PEWTER_CITY_WIDTH,     24, 11
+CeruleanCityFlyWarp: ; 648e (1:648e)
+	FLYWARP_DATA CERULEAN_CITY_WIDTH,   16, 17
+LavenderTownFlyWarp: ; 6494 (1:6494)
+	FLYWARP_DATA LAVENDER_TOWN_WIDTH,    6,  3
+VermilionCityFlyWarp: ; 649a (1:649a)
+	FLYWARP_DATA VERMILION_CITY_WIDTH,   4, 11
+CeladonCityFlyWarp: ; 64a0 (1:64a0)
+	FLYWARP_DATA CELADON_CITY_WIDTH,    10, 41
+FuchsiaCityFlyWarp: ; 64a6 (1:64a6)
+	FLYWARP_DATA FUCHSIA_CITY_WIDTH,    28, 19
+CinnabarIslandFlyWarp: ; 64ac (1:64ac)
+	FLYWARP_DATA CINNABAR_ISLAND_WIDTH, 12, 11
+IndigoPlateauFlyWarp: ; 64b2 (1:64b2)
+	FLYWARP_DATA INDIGO_PLATEAU_WIDTH,   6,  9
+SaffronCityFlyWarp: ; 64b8 (1:64b8)
+	FLYWARP_DATA SAFFRON_CITY_WIDTH,    30,  9
+Route4FlyWarp: ; 64be (1:64be)
+	FLYWARP_DATA VIRIDIAN_FOREST_WIDTH, 22, 7
+NewCityFlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA NEW_CITY_WIDTH,        6, 3
+FlyMapFlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA FLYMAP_WIDTH,        10, 10
+RT1FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA ROUTE_1_WIDTH,        28, 9
+RT2FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA ROUTE_2_WIDTH,        20, 10
+RT3FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA ROUTE_3_WIDTH,        9, 9
+RT4FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA ROUTE_4_WIDTH,        6, 11
+RT5FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA FLYMAP_WIDTH,        10, 10
+RT6FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA FLYMAP_WIDTH,        10, 10
+RT7FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA FLYMAP_WIDTH,        10, 10
+RT8FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA FLYMAP_WIDTH,        10, 10
+RT9FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA ROUTE_9_WIDTH,       46, 8
+RT10FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA FLYMAP_WIDTH,        10, 10
+RT11FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA FLYMAP_WIDTH,        10, 10
+RT12FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA FLYMAP_WIDTH,        10, 10
+RT13FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA FLYMAP_WIDTH,        10, 10
+RT14FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA FLYMAP_WIDTH,        10, 10
+RT15FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA FLYMAP_WIDTH,        10, 10
+RT16FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA ROUTE_16_WIDTH,      10, 6
+RT17FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA FLYMAP_WIDTH,        10, 10
+RT18FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA FLYMAP_WIDTH,        10, 10
+RT19FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA FLYMAP_WIDTH,        10, 10
+RT20FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA ROUTE_20_WIDTH,      6, 5
+RT21FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA FLYMAP_WIDTH,        10, 10
+RT22FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA FLYMAP_WIDTH,        10, 10
+RT23FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA FLYMAP_WIDTH,        10, 10
+RT24FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA FLYMAP_WIDTH,        10, 10
+RT25FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA FLYMAP_WIDTH,        10, 10
+SSANNE1FlyWarp: ; 64c4 (1:64c4)
+	FLYWARP_DATA SS_ANNE_1_WIDTH,     4, 18
+
