@@ -1,6 +1,6 @@
 # Pokémon Red and Blue
 
-This is a disassembly of Pokémon Red and Blue.
+This is a disassembly of Pokémon Red and Blue. (+ OLD ASSEMBLY CODE TO MAKE A ROM HACK)
 
 It builds the following roms:
 
